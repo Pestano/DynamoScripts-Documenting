@@ -1,0 +1,882 @@
+{
+  "Uuid": "959ee112-5850-4bfb-b54d-8f5f481a7a79",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "APM_LineStyles",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.LineStyle.Create@string,int,Revit.Elements.Element,DSCore.Color",
+      "Id": "47fc39e69da043c1b13fe08fe9407cbe",
+      "Inputs": [
+        {
+          "Id": "b479d8de48154cb6ab700c64e225874b",
+          "Name": "name",
+          "Description": "Enter the name of the new Line Style as a string.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "852380e6001d4fd4a39b539cf0768a91",
+          "Name": "weight",
+          "Description": "Input the line wieght as an integer.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a873280c23a043c49fbfc5401b2003bd",
+          "Name": "linePattern",
+          "Description": "Input the required line pattern. Only avaialable for Revit versions 2017 and above. No input defaults to Solid line pattern.\n\nElement\nValor por defecto : null (desactivado)",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "2a5ef8ad29d0466d963af46126a4c219",
+          "Name": "color",
+          "Description": "Input the required line Color.\n\nColor",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "42a9ec11167d463b97e9ddec662593ee",
+          "Name": "report",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "09d55662f22645ff8d87be19065643e1",
+          "Name": "GraphicStyle",
+          "Description": "GraphicStyle",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Create a new LineStyle. The GraphicStyle output returns the new LineStyle or a LineStyle from the active document if it exists.\r\rVisit bimorph.com/bimorph-nodes for support\n\nLineStyle.Create (name: string, weight: int, linePattern: Element = null, color: Color): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"VP_1 Azul Discontinuo\";",
+      "Id": "a2d29bc621ea4aa6b771a80185a43016",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "06f66d7b5f104c51b6b07f18ec1f92a4",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1;\n3;\n6;",
+      "Id": "c807ffe2693f485d8c8dca27e2c2484e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1d81f972f92a4d108fd220009306b1cd",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "02793b451986488a9fe8b5d308ad0798",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7f0f9274fcd24f5fb114ac433e94b5ca",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 3",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.LinePatterns, DSRevitNodesUI",
+      "SelectedIndex": 12,
+      "SelectedString": "Trazo pequeño",
+      "NodeType": "ExtensionNode",
+      "Id": "a29f3939f211485dae9644774d91ac83",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "7a611952ac73460eaf25025da67e065b",
+          "Name": "LinePattern",
+          "Description": "LinePattern seleccionado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los patrones de línea disponibles."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 0,
+        "G": 0,
+        "B": 128,
+        "A": 255
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "3490800a18b444a8ace4118a8f630731",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "04132a3969754483aa0f7f17d9749878",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Seleccionar un color de la paleta"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"VP_3 Rojo Centro\";",
+      "Id": "39eedee7715740d394ac4960206bf00e",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ec385359620f4366a80eacd8328fd2a5",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"VP_6 Amarillo\";",
+      "Id": "99c0071259e54c29ab924f2cb9904f5f",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f520b8de50194cf59216b791b8da0ebe",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "ccc327fbe9024decb9d09482e4710e81",
+      "Inputs": [
+        {
+          "Id": "c649a9bac3fb46118338d3bb9abc552c",
+          "Name": "item0",
+          "Description": "Índice de elemento núm.0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "1c31e7cd5026448cb2b53d18b117f2e3",
+          "Name": "item1",
+          "Description": "Índice de elemento núm.1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "cc12c473187442489cb482c0167e1cbc",
+          "Name": "item2",
+          "Description": "Índice de elemento núm.2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2413a5bac3294e15ba15ec0599522739",
+          "Name": "list",
+          "Description": "Una lista",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Crea una nueva lista a partir de las entradas especificadas"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "18a82c8b5dea4d83bdf3dbecdf2648ec",
+      "Inputs": [
+        {
+          "Id": "591b6ef82c9d459f9e957a0fc67c935f",
+          "Name": "item0",
+          "Description": "Índice de elemento núm.0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9b17b9c2c100488bb26ea9f261687866",
+          "Name": "item1",
+          "Description": "Índice de elemento núm.1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "6a946163d08b4c25898d86db76b90d8e",
+          "Name": "item2",
+          "Description": "Índice de elemento núm.2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7f69473ea63c4d839e5a213fd1c16241",
+          "Name": "list",
+          "Description": "Una lista",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Crea una nueva lista a partir de las entradas especificadas"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.LinePatterns, DSRevitNodesUI",
+      "SelectedIndex": 13,
+      "SelectedString": "Trazo punto",
+      "NodeType": "ExtensionNode",
+      "Id": "58513e2af5de428b89001d50fc87ebb8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "8d78c45f0a1a444284c8073d53da12ee",
+          "Name": "LinePattern",
+          "Description": "LinePattern seleccionado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los patrones de línea disponibles."
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.LinePatterns, DSRevitNodesUI",
+      "SelectedIndex": 7,
+      "SelectedString": "Punto",
+      "NodeType": "ExtensionNode",
+      "Id": "490cc133147648f0957ca13f6f56eaf8",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "fad4c05f4f124e47a352014808c9db7e",
+          "Name": "LinePattern",
+          "Description": "LinePattern seleccionado",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los patrones de línea disponibles."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "739905b22c4543e3805a2dd1ca846b7e",
+      "Inputs": [
+        {
+          "Id": "01655df010e24d0896eb4c69439eeb65",
+          "Name": "item0",
+          "Description": "Índice de elemento núm.0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "5ad0d5fecffb418f9d61499f7ff6cd45",
+          "Name": "item1",
+          "Description": "Índice de elemento núm.1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bd8b007bd5ce4dc581add6e80644616b",
+          "Name": "item2",
+          "Description": "Índice de elemento núm.2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "3b75639c39be426ab5da1998a12a95e3",
+          "Name": "list",
+          "Description": "Una lista",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Crea una nueva lista a partir de las entradas especificadas"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 255,
+        "G": 215,
+        "B": 0,
+        "A": 255
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "d4b377b462dc4250a6912f318fa0b5e3",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "ec2070e5c47041a98eb44de301010df0",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Seleccionar un color de la paleta"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.ColorPalette, CoreNodeModels",
+      "InputValue": {
+        "R": 255,
+        "G": 0,
+        "B": 0,
+        "A": 255
+      },
+      "NodeType": "ColorInputNode",
+      "Id": "7419884fedde46bc83414a4010814213",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f0a29cdd87ed4af1970eb58f50e0e4cf",
+          "Name": "Color",
+          "Description": "Selected Color.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Seleccionar un color de la paleta"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.CreateList, CoreNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "01b1855c43f346179121c9b15d51de87",
+      "Inputs": [
+        {
+          "Id": "c0f640293d8046c381aa4d96ea698dd7",
+          "Name": "item0",
+          "Description": "Índice de elemento núm.0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c1e0e91aa59d48c3b0d174d2b821282c",
+          "Name": "item1",
+          "Description": "Índice de elemento núm.1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "685d13acbef94b31ba9bb67c44d1500a",
+          "Name": "item2",
+          "Description": "Índice de elemento núm.2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "20de88d52ab04652b29db19a93d0991a",
+          "Name": "list",
+          "Description": "Una lista",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Crea una nueva lista a partir de las entradas especificadas"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "06f66d7b5f104c51b6b07f18ec1f92a4",
+      "End": "c649a9bac3fb46118338d3bb9abc552c",
+      "Id": "f1fdcfe5ab854f3590ffe28e6ca3de3e"
+    },
+    {
+      "Start": "1d81f972f92a4d108fd220009306b1cd",
+      "End": "591b6ef82c9d459f9e957a0fc67c935f",
+      "Id": "f00cc3ac63f74b978a1c14d680fb9638"
+    },
+    {
+      "Start": "02793b451986488a9fe8b5d308ad0798",
+      "End": "9b17b9c2c100488bb26ea9f261687866",
+      "Id": "9411287951d54e629611f13e50cbba02"
+    },
+    {
+      "Start": "7f0f9274fcd24f5fb114ac433e94b5ca",
+      "End": "6a946163d08b4c25898d86db76b90d8e",
+      "Id": "b55bbbd264e74df2ae6988197a460d08"
+    },
+    {
+      "Start": "7a611952ac73460eaf25025da67e065b",
+      "End": "01655df010e24d0896eb4c69439eeb65",
+      "Id": "8d50ea87ace647a3bb256725a339c9f7"
+    },
+    {
+      "Start": "04132a3969754483aa0f7f17d9749878",
+      "End": "c0f640293d8046c381aa4d96ea698dd7",
+      "Id": "67026cdbeb464fed91b2722fa959f765"
+    },
+    {
+      "Start": "ec385359620f4366a80eacd8328fd2a5",
+      "End": "1c31e7cd5026448cb2b53d18b117f2e3",
+      "Id": "f592b9d3609b40d3bc557e64a6357e90"
+    },
+    {
+      "Start": "f520b8de50194cf59216b791b8da0ebe",
+      "End": "cc12c473187442489cb482c0167e1cbc",
+      "Id": "df7028fcf86b47dfa34692ff021b016a"
+    },
+    {
+      "Start": "2413a5bac3294e15ba15ec0599522739",
+      "End": "b479d8de48154cb6ab700c64e225874b",
+      "Id": "9ca792b4c88b4941893eecd0ac0d2eb0"
+    },
+    {
+      "Start": "7f69473ea63c4d839e5a213fd1c16241",
+      "End": "852380e6001d4fd4a39b539cf0768a91",
+      "Id": "cf3db947d86546be8e5c6c4c17eabfcc"
+    },
+    {
+      "Start": "8d78c45f0a1a444284c8073d53da12ee",
+      "End": "5ad0d5fecffb418f9d61499f7ff6cd45",
+      "Id": "da0f33490e3f4f708b3780ad43edd27b"
+    },
+    {
+      "Start": "fad4c05f4f124e47a352014808c9db7e",
+      "End": "bd8b007bd5ce4dc581add6e80644616b",
+      "Id": "4269638eaefc4cb9bb4d7650501b2f07"
+    },
+    {
+      "Start": "3b75639c39be426ab5da1998a12a95e3",
+      "End": "a873280c23a043c49fbfc5401b2003bd",
+      "Id": "07dd863d4e904c859ced50aa849908ec"
+    },
+    {
+      "Start": "ec2070e5c47041a98eb44de301010df0",
+      "End": "685d13acbef94b31ba9bb67c44d1500a",
+      "Id": "7da0ddf404d14299a9814b6f6344e24a"
+    },
+    {
+      "Start": "f0a29cdd87ed4af1970eb58f50e0e4cf",
+      "End": "c1e0e91aa59d48c3b0d174d2b821282c",
+      "Id": "da456ba470a0434bbc26ee1195a43d33"
+    },
+    {
+      "Start": "20de88d52ab04652b29db19a93d0991a",
+      "End": "2a5ef8ad29d0466d963af46126a4c219",
+      "Id": "e4c06b8b8bb9416cb17c5a833c2835de"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "bimorphNodes",
+      "Version": "3.0.3",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "47fc39e69da043c1b13fe08fe9407cbe"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "LineStyle.Create",
+        "Id": "47fc39e69da043c1b13fe08fe9407cbe",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1386.4558483697597,
+        "Y": 671.53693689902752
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "a2d29bc621ea4aa6b771a80185a43016",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 576.30623679406881,
+        "Y": 147.81939242042921
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "c807ffe2693f485d8c8dca27e2c2484e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 756.43556479745382,
+        "Y": 536.82780153904059
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Line Patterns",
+        "Id": "a29f3939f211485dae9644774d91ac83",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 498.435035685524,
+        "Y": 740.90478529167353
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color Palette",
+        "Id": "3490800a18b444a8ace4118a8f630731",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 698.7752959173431,
+        "Y": 1109.007426982166
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "39eedee7715740d394ac4960206bf00e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 573.63140846928877,
+        "Y": 262.80963595716565
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "99c0071259e54c29ab924f2cb9904f5f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 574.62389724205968,
+        "Y": 353.60339182067685
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "ccc327fbe9024decb9d09482e4710e81",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 864.77124923213682,
+        "Y": 221.85768466496557
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "18a82c8b5dea4d83bdf3dbecdf2648ec",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 867.86665746284325,
+        "Y": 525.18126247263115
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Line Patterns",
+        "Id": "58513e2af5de428b89001d50fc87ebb8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 507.335969465516,
+        "Y": 839.22170048000294
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Line Patterns",
+        "Id": "490cc133147648f0957ca13f6f56eaf8",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 509.83798015367245,
+        "Y": 933.19918077264788
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "739905b22c4543e3805a2dd1ca846b7e",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 903.22862297595771,
+        "Y": 809.85741692920374
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color Palette",
+        "Id": "d4b377b462dc4250a6912f318fa0b5e3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 695.94996489236041,
+        "Y": 1289.0347969443696
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Color Palette",
+        "Id": "7419884fedde46bc83414a4010814213",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 696.20849062665229,
+        "Y": 1200.4079240412318
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Create",
+        "Id": "01b1855c43f346179121c9b15d51de87",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 908.10500067586565,
+        "Y": 1165.6389179794423
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "c2722fc398a34cbca00f999e48c45b10",
+        "Title": "LINE STYLE NAMES:\r\n-----------------",
+        "Nodes": [
+          "a2d29bc621ea4aa6b771a80185a43016",
+          "39eedee7715740d394ac4960206bf00e",
+          "99c0071259e54c29ab924f2cb9904f5f",
+          "ccc327fbe9024decb9d09482e4710e81"
+        ],
+        "Left": 563.63140846928877,
+        "Top": 80.219392420429216,
+        "Width": 431.93984076284806,
+        "Height": 365.98399940024763,
+        "FontSize": 24.0,
+        "InitialTop": 147.81939242042921,
+        "InitialHeight": 350.78399940024764,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "0aee38ba624b4cbba2b10808d39cf474",
+        "Title": "LINE WITH:\r\n------------",
+        "Nodes": [
+          "c807ffe2693f485d8c8dca27e2c2484e",
+          "18a82c8b5dea4d83bdf3dbecdf2648ec"
+        ],
+        "Left": 746.43556479745382,
+        "Top": 457.58126247263112,
+        "Width": 252.23109266538944,
+        "Height": 199.04653906640948,
+        "FontSize": 24.0,
+        "InitialTop": 525.18126247263115,
+        "InitialHeight": 156.64653906640945,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "105fe72aafde459c951684402303923e",
+        "Title": "LINE PATTHERN:\r\n--------------------",
+        "Nodes": [
+          "a29f3939f211485dae9644774d91ac83",
+          "58513e2af5de428b89001d50fc87ebb8",
+          "490cc133147648f0957ca13f6f56eaf8",
+          "739905b22c4543e3805a2dd1ca846b7e"
+        ],
+        "Left": 488.435035685524,
+        "Top": 673.30478529167351,
+        "Width": 545.59358729043367,
+        "Height": 352.49439548097439,
+        "FontSize": 24.0,
+        "InitialTop": 740.90478529167353,
+        "InitialHeight": 337.29439548097434,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "caac4ca80ab949bf838f972d664afe8b",
+        "Title": "LINE COLORS:\r\n------------",
+        "Nodes": [
+          "3490800a18b444a8ace4118a8f630731",
+          "d4b377b462dc4250a6912f318fa0b5e3",
+          "7419884fedde46bc83414a4010814213",
+          "01b1855c43f346179121c9b15d51de87"
+        ],
+        "Left": 685.94996489236041,
+        "Top": 1041.407426982166,
+        "Width": 352.95503578350525,
+        "Height": 340.22736996220362,
+        "FontSize": 24.0,
+        "InitialTop": 1109.007426982166,
+        "InitialHeight": 331.4095736430977,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "5c7865039d164c1fb4293da6e6619559",
+        "Title": "Custom Node: BimorphNodes v.3.0.3",
+        "Nodes": [],
+        "Left": 1409.2535068185764,
+        "Top": 640.9698149307419,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "6eb4927172a949a19857e7621de8f73f",
+        "Title": "\r\nINSTRUCTIONS:\r\n_______________________\r\nDefinition to create our own line styles from the existing patterns in the model, a thickness, a name of choice and a color.",
+        "Nodes": [],
+        "Left": 570.99214670038941,
+        "Top": -59.560103370920729,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -407.29259785945726,
+    "Y": 134.3818105335169,
+    "Zoom": 0.89461611633549609
+  }
+}

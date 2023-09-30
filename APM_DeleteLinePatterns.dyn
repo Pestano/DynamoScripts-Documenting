@@ -1,0 +1,721 @@
+{
+  "Uuid": "0b1ac0eb-8b9e-4228-883e-8215aa010890",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "APM_DeleteLinePatterns",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementTypes, DSRevitNodesUI",
+      "SelectedIndex": 182,
+      "SelectedString": "LinePatternElement",
+      "NodeType": "ExtensionNode",
+      "Id": "4e77e9c106d842e6add055605f54bc57",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3b94c3c2611e4c738acd78e1e68a385b",
+          "Name": "Types",
+          "Description": "The selected Types",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los subtipos de elemento"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfType, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "115f1fd89d4747c792d742eaf9a1f62b",
+      "Inputs": [
+        {
+          "Id": "4ec7240931f44931b0dcffa911b9728c",
+          "Name": "element type",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "906e05b0b4c2406b82eff1261d2fb69c",
+          "Name": "elements",
+          "Description": "All elements in the active document of a given type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los elementos del documento activo de un tipo determinado"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Id": "bc78e74c3ed74b3881c51860ed566730",
+      "Inputs": [
+        {
+          "Id": "cec6ed7e393c486ab6ace5f8b68aac17",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cf4ac714e86e4a778dba7f56ff8cb677",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtiene el nombre del elemento.\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "archilabUI.ListSelector.ListSelector, archilabUI2022",
+      "ItemsCollection": [
+        {
+          "Name": "Aligning Line 1/8\"",
+          "Index": 0,
+          "IsSelected": true
+        },
+        {
+          "Name": "Center 1/4\"",
+          "Index": 1,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash 1/8\"",
+          "Index": 2,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash Dot 3/16\"",
+          "Index": 3,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash Dot Dot 3/8\"",
+          "Index": 4,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dot 3/16\"",
+          "Index": 5,
+          "IsSelected": false
+        },
+        {
+          "Name": "Double Dash 5/8\"",
+          "Index": 6,
+          "IsSelected": false
+        },
+        {
+          "Name": "Grid Line 1/2\"",
+          "Index": 7,
+          "IsSelected": false
+        },
+        {
+          "Name": "Loose Dash 1/8\"",
+          "Index": 8,
+          "IsSelected": false
+        },
+        {
+          "Name": "Triple Dash 5/8\"",
+          "Index": 9,
+          "IsSelected": false
+        },
+        {
+          "Name": "Overhead 3/32\"",
+          "Index": 10,
+          "IsSelected": false
+        },
+        {
+          "Name": "Hidden 3/16\"",
+          "Index": 11,
+          "IsSelected": false
+        },
+        {
+          "Name": "Demolished 3/16\"",
+          "Index": 12,
+          "IsSelected": false
+        },
+        {
+          "Name": "Center 3/8\"",
+          "Index": 13,
+          "IsSelected": false
+        },
+        {
+          "Name": "Center 5/8\"",
+          "Index": 14,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash 1/16\"",
+          "Index": 15,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash 3/32\"",
+          "Index": 16,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash Dot 3/8\"",
+          "Index": 17,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash Dot Dot 1/8\"",
+          "Index": 18,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash Dot Dot Dot 3/8\"",
+          "Index": 19,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dot 1/16\"",
+          "Index": 20,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dot 1/8\"",
+          "Index": 21,
+          "IsSelected": false
+        },
+        {
+          "Name": "Double Dash 3/8\"",
+          "Index": 22,
+          "IsSelected": false
+        },
+        {
+          "Name": "Grid Line 1/4\"",
+          "Index": 23,
+          "IsSelected": false
+        },
+        {
+          "Name": "Hidden 1/16\"",
+          "Index": 24,
+          "IsSelected": false
+        },
+        {
+          "Name": "Hidden 1/8\"",
+          "Index": 25,
+          "IsSelected": false
+        },
+        {
+          "Name": "Hidden 3/32\"",
+          "Index": 26,
+          "IsSelected": false
+        },
+        {
+          "Name": "Hidden 3/8\"",
+          "Index": 27,
+          "IsSelected": false
+        },
+        {
+          "Name": "Loose Dash 1/16\"",
+          "Index": 28,
+          "IsSelected": false
+        },
+        {
+          "Name": "Overhead 1/16\"",
+          "Index": 29,
+          "IsSelected": false
+        },
+        {
+          "Name": "Triple Dash 5/16\"",
+          "Index": 30,
+          "IsSelected": false
+        },
+        {
+          "Name": "Aligning Line",
+          "Index": 31,
+          "IsSelected": true
+        },
+        {
+          "Name": "Center",
+          "Index": 32,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash",
+          "Index": 33,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash dot",
+          "Index": 34,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash dot dot",
+          "Index": 35,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dot",
+          "Index": 36,
+          "IsSelected": false
+        },
+        {
+          "Name": "Double dash",
+          "Index": 37,
+          "IsSelected": false
+        },
+        {
+          "Name": "Long dash",
+          "Index": 38,
+          "IsSelected": false
+        },
+        {
+          "Name": "Loose dash",
+          "Index": 39,
+          "IsSelected": false
+        },
+        {
+          "Name": "Triple dash",
+          "Index": 40,
+          "IsSelected": false
+        },
+        {
+          "Name": "Overhead",
+          "Index": 41,
+          "IsSelected": false
+        },
+        {
+          "Name": "Hidden",
+          "Index": 42,
+          "IsSelected": false
+        },
+        {
+          "Name": "Demolished",
+          "Index": 43,
+          "IsSelected": false
+        },
+        {
+          "Name": "Grid Line",
+          "Index": 44,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dot 1/32\"",
+          "Index": 45,
+          "IsSelected": false
+        },
+        {
+          "Name": "Rebar Cover Lines",
+          "Index": 46,
+          "IsSelected": false
+        },
+        {
+          "Name": "Dash 3/32''",
+          "Index": 47,
+          "IsSelected": false
+        }
+      ],
+      "NodeType": "ExtensionNode",
+      "Id": "a7ba938220944c969ec8d129069b61db",
+      "Inputs": [
+        {
+          "Id": "1bab0b37a1514b448f36e7a5b3d22fba",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "571ece552c6a431284786d5be66196ff",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "87409f5c8d1349399518aa61b9318502",
+          "Name": "List",
+          "Description": "Selected items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "df4543a070c4494186c6dd2718ed7410",
+          "Name": "List",
+          "Description": "Selected Items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Use this node to select multiple items from a list."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.IndexOf@var[]..[],var",
+      "Id": "d26d5126b80348ae9bc6b6c0e7ee19e3",
+      "Inputs": [
+        {
+          "Id": "8b23d031dc8e4ab4a9d11e60dfd83b95",
+          "Name": "list",
+          "Description": "Lista en la que buscar el elemento.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08b0019ce03648d4874efc16e8833e4d",
+          "Name": "element",
+          "Description": "Elemento cuyo índice se debe devolver.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "056dbe2c13fa4416a523e89960fcd820",
+          "Name": "int",
+          "Description": "Índice del elemento de la lista.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Devuelve el índice del elemento de la lista especificada.\n\nList.IndexOf (list: var[]..[], element: var): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "669c3dda2b69405aaf52c3a5c329553a",
+      "Inputs": [
+        {
+          "Id": "78cc538c50214e1f86fea0b80d827c7a",
+          "Name": "list",
+          "Description": "Lista de la cual se debe recuperar un elemento.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dbf14d9f848b4503a33fbbbdce2ffc23",
+          "Name": "index",
+          "Description": "El índice del elemento que se debe recuperar.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8ca4192713684e4ebddaee9017d17ae3",
+          "Name": "item",
+          "Description": "Elemento de la lista en el índice especificado.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Devuelve un elemento de la lista especificada que se encuentra en el índice indicado.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "archilab.Revit.Elements.Elements.Delete@Revit.Elements.Element",
+      "Id": "e9d3fce0f2d8480cb83af5f74b890653",
+      "Inputs": [
+        {
+          "Id": "5bbbbfde8e09460bab14e856450a232d",
+          "Name": "element",
+          "Description": "Element to delete.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dc83e8a76cbb4effa078e85c508a851c",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Delete element from Revit DB.\n\nElements.Delete (element: Element): bool"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "3b94c3c2611e4c738acd78e1e68a385b",
+      "End": "4ec7240931f44931b0dcffa911b9728c",
+      "Id": "e1b08f2e4f714afe8585b9c0025e0ddf"
+    },
+    {
+      "Start": "906e05b0b4c2406b82eff1261d2fb69c",
+      "End": "cec6ed7e393c486ab6ace5f8b68aac17",
+      "Id": "43d1ac202f754d5380a793053bdd2a0b"
+    },
+    {
+      "Start": "906e05b0b4c2406b82eff1261d2fb69c",
+      "End": "78cc538c50214e1f86fea0b80d827c7a",
+      "Id": "2ce5e24969af49f38cb3741e841ca439"
+    },
+    {
+      "Start": "cf4ac714e86e4a778dba7f56ff8cb677",
+      "End": "8b23d031dc8e4ab4a9d11e60dfd83b95",
+      "Id": "4c2768a3e25f463b95d49d60d72bdf98"
+    },
+    {
+      "Start": "cf4ac714e86e4a778dba7f56ff8cb677",
+      "End": "571ece552c6a431284786d5be66196ff",
+      "Id": "b957182a85454bf6983d58bb655b095d"
+    },
+    {
+      "Start": "df4543a070c4494186c6dd2718ed7410",
+      "End": "08b0019ce03648d4874efc16e8833e4d",
+      "Id": "a99064f3ca894390b79c8aedb35ccbc5"
+    },
+    {
+      "Start": "056dbe2c13fa4416a523e89960fcd820",
+      "End": "dbf14d9f848b4503a33fbbbdce2ffc23",
+      "Id": "2ca0db84e7dd46788c244e3dffe94d50"
+    },
+    {
+      "Start": "8ca4192713684e4ebddaee9017d17ae3",
+      "End": "5bbbbfde8e09460bab14e856450a232d",
+      "Id": "a22b986e357240d6af4139f5ab1c2447"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2023.213.1722",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "a7ba938220944c969ec8d129069b61db",
+        "e9d3fce0f2d8480cb83af5f74b890653"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "4e77e9c106d842e6add055605f54bc57",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Element Types",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 239.40848599443598,
+        "Y": 520.12681580331127
+      },
+      {
+        "Id": "115f1fd89d4747c792d742eaf9a1f62b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "All Elements of Type",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 459.55620300346573,
+        "Y": 519.51212370161261
+      },
+      {
+        "Id": "bc78e74c3ed74b3881c51860ed566730",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Element.Name",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 681.32230532757546,
+        "Y": 520.75613075289766
+      },
+      {
+        "Id": "a7ba938220944c969ec8d129069b61db",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "List Selector",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 968.65609932666075,
+        "Y": 579.97987462450612
+      },
+      {
+        "Id": "d26d5126b80348ae9bc6b6c0e7ee19e3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "List.IndexOf",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 1252.0594327273402,
+        "Y": 523.96143019737724
+      },
+      {
+        "Id": "669c3dda2b69405aaf52c3a5c329553a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "List.GetItemAtIndex",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 1471.2359914523529,
+        "Y": 523.10933719392847
+      },
+      {
+        "Id": "e9d3fce0f2d8480cb83af5f74b890653",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Elements.Delete",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 1680.2852726573603,
+        "Y": 528.8605712660667
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "d851d34b26194c878d5b4ad148ca2f5a",
+        "Title": "SELECT ALL LINE PATTERNS IN THE PROJECT:\r\n-----------------",
+        "Nodes": [
+          "4e77e9c106d842e6add055605f54bc57",
+          "115f1fd89d4747c792d742eaf9a1f62b",
+          "bc78e74c3ed74b3881c51860ed566730"
+        ],
+        "Left": 229.40848599443598,
+        "Top": 451.91212370161259,
+        "Width": 664.31381933313946,
+        "Height": 161.44400705128507,
+        "FontSize": 24.0,
+        "InitialTop": 519.51212370161261,
+        "InitialHeight": 123.84400705128505,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "5738653e430941f4bb372cc5ffa5755d",
+        "Title": "DELETE:\r\n--------",
+        "Nodes": [
+          "e9d3fce0f2d8480cb83af5f74b890653",
+          "77d6ddba8b7849e7af2d30ee6c7df0e8"
+        ],
+        "Left": 1670.2852726573603,
+        "Top": 426.26057126606668,
+        "Width": 248.8,
+        "Height": 195.20000000000002,
+        "FontSize": 24.0,
+        "InitialTop": 493.8605712660667,
+        "InitialHeight": 157.6,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "25eefeb0cc724466b8f54afccd210252",
+        "Title": "Custom Node: archilab v.2023.213.1722",
+        "Nodes": [],
+        "Left": 968.65609932666075,
+        "Top": 544.97987462450612,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "77d6ddba8b7849e7af2d30ee6c7df0e8",
+        "Title": "Custom Node: archilab v.2023.213.1722",
+        "Nodes": [],
+        "Left": 1680.2852726573603,
+        "Top": 493.8605712660667,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "91f52d429c3e4f87a8e885c037b3bb96",
+        "Title": "INSTRUCTIONS:\r\n_________________\r\nDefinition created to delete all selected line patterns at once.\r\nIs very usefull when we had imported a lot of dwg files and we have to delete all the line patterns created by this.\r\n-CAUTION-\r\nYou can delete used line patterns.",
+        "Nodes": [],
+        "Left": 236.99191281432309,
+        "Top": 280.64482937858975,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -142.23281364186926,
+    "Y": 299.28641995733176,
+    "Zoom": 0.45677287516568726
+  }
+}

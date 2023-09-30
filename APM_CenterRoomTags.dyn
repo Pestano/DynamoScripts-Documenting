@@ -1,0 +1,227 @@
+{
+  "Uuid": "cc925c52-72b1-4da1-8ed8-4d1f24c79268",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "APM_CenterRoomTags",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 363,
+      "SelectedString": "OST_Rooms",
+      "NodeType": "ExtensionNode",
+      "Id": "8275e6576c564850a2c433d4d24e4951",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "d447e1f58b284b11a5e49d2a558c7bdc",
+          "Name": "Category",
+          "Description": "La categoría seleccionada",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todas las categorías integradas"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "385c6eef95394f95bf1f0d755cb803b9",
+      "Inputs": [
+        {
+          "Id": "34502da0c64d497e8860798d52c61b91",
+          "Name": "Category",
+          "Description": "La categoría",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "7f2989a8892e40b7ac3aa1369cab65d8",
+          "Name": "Elements",
+          "Description": "Un tipo de elemento",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Obtiene todos los elementos de la categoría especificada en el modelo"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "b0e36d72-d17b-4ad8-8ea7-c8f119aba37e",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "85add7dbd0b6470e94613f38f794ee22",
+      "Inputs": [
+        {
+          "Id": "c3bef0d9bde149198259a35434d04239",
+          "Name": "_rooms",
+          "Description": "Room(s) to move location and tags.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "29848af0119e4dd1903403247e4aa234",
+          "Name": "_centeredRooms",
+          "Description": "Moved to geometrical center.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0354b22ca2814642979de785f0d7a6b0",
+          "Name": "_movedRooms",
+          "Description": "Moved to closest possible point to geometrical center.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "9d5bf31c004f44d0a642b6f19b102a47",
+          "Name": "_errorRooms",
+          "Description": "Could not be moved",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "This node moves the room location of the selected rooms to the closest possible point to geometrical center. Also modifies the associated room tags in all model."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "d447e1f58b284b11a5e49d2a558c7bdc",
+      "End": "34502da0c64d497e8860798d52c61b91",
+      "Id": "0da8385b0f2e4641aff21ee9e6671992"
+    },
+    {
+      "Start": "7f2989a8892e40b7ac3aa1369cab65d8",
+      "End": "c3bef0d9bde149198259a35434d04239",
+      "Id": "6e4466360b5e49e7bf112dcc90bddc8e"
+    }
+  ],
+  "Dependencies": [
+    "b0e36d72-d17b-4ad8-8ea7-c8f119aba37e"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Modelical",
+      "Version": "2022.6.15",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "85add7dbd0b6470e94613f38f794ee22"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Categories",
+        "Id": "8275e6576c564850a2c433d4d24e4951",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -620.890074860439,
+        "Y": 396.49450408523791
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "385c6eef95394f95bf1f0d755cb803b9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -417.18935319038565,
+        "Y": 395.4498849997504
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Room.CenterLocationAndTags",
+        "Id": "85add7dbd0b6470e94613f38f794ee22",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": -201.68450943512198,
+        "Y": 390.42347467526781
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "1f1ce4283c46462bbae122ae9151edca",
+        "Title": "Modelical\r\n_______________",
+        "Nodes": [
+          "85add7dbd0b6470e94613f38f794ee22"
+        ],
+        "Left": -211.68450943512198,
+        "Top": 322.82347467526779,
+        "Width": 284.8,
+        "Height": 211.40000000000003,
+        "FontSize": 24.0,
+        "InitialTop": 390.42347467526781,
+        "InitialHeight": 145.0,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "a36efe9082694a2b8a70deb05a46a85c",
+        "Title": "INSTRUCTIONS:\r\n____________________\r\nThis definition takes all the rooms and places their center at the centroid of the room.",
+        "Nodes": [],
+        "Left": -627.39375971715,
+        "Top": 293.09393239224426,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 1087.4641980975657,
+    "Y": -27.552836034866061,
+    "Zoom": 1.5822163759023793
+  }
+}

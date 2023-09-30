@@ -1,0 +1,448 @@
+{
+  "Uuid": "d820656a-fef5-4bb3-b5f4-ff4db6d09b30",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "Duplicar+Renombrar-Vistas",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "f153d48d-85dd-4a7e-8ba2-91b08d81e5e7",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "4da3185954df4836aabc044abceb139b",
+      "Inputs": [
+        {
+          "Id": "24b0fb5b837245529478e1f748c295f6",
+          "Name": "refresh",
+          "Description": "bool\nValor por defecto : true",
+          "UsingDefaultValue": true,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "f66019e3ce5043cbad2b8835162d7a04",
+          "Name": "element(s)",
+          "Description": "valor de retorno",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets the currently selected elements. Connect a boolean switch to refresh the selection."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"NI_\" + nomb +\"_car\";",
+      "Id": "0a12e64abbcf4567831ae71de99aa1e7",
+      "Inputs": [
+        {
+          "Id": "3e2140c72ea54cccaf36a499eb40cae6",
+          "Name": "nomb",
+          "Description": "nomb",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c961891dcf164f7784f8ce2edbb844c8",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "2f56d88b-a263-45de-b9e5-e074dbe52635",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "09aa57aa2b93486f83d3863e264e3848",
+      "Inputs": [
+        {
+          "Id": "6ee51c3523774fc4ada49c43c10aa5e9",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c307f7c699d04b058721a7faaab5a718",
+          "Name": "name",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "2db319e7d7f242dfae7ebd4e28778bd7",
+          "Name": "element",
+          "Description": "valor de retorno",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8ace9673f23e4edeb428a17d5fc86835",
+          "Name": "success",
+          "Description": "valor de retorno",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets the name of a given Revit element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.Count@var[]..[]",
+      "Id": "764383a8a0264d5a88331a36dee425d9",
+      "Inputs": [
+        {
+          "Id": "d521831b04a246c4ab710029684e1c62",
+          "Name": "list",
+          "Description": "Lista de la que se debe obtener el recuento de elementos.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "184de75526e34fb791deecd463cb3b66",
+          "Name": "count",
+          "Description": "Longitud de la lista.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Devuelve el número de elementos almacenados en la lista especificada.\n\nList.Count (list: var[]..[]): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "1..#CANT..1;",
+      "Id": "f037764b7a174d3e8fcdb7beaa250c19",
+      "Inputs": [
+        {
+          "Id": "5a1983555f0544aeb2c7e6b49606585c",
+          "Name": "CANT",
+          "Description": "CANT",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "118452a167c34ef3b7c20283d1882e37",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "237e943c-c1a0-4936-9269-1b5ad1dc8b4c",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "533fedf39c144a3d8f459447dfaae553",
+      "Inputs": [
+        {
+          "Id": "c764db3914be4aa6a6844dc427b20436",
+          "Name": "view",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "6599bfbb747c442bae5a805c3f5d1efc",
+          "Name": "view",
+          "Description": "valor de retorno",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Duplicates a given view"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f66019e3ce5043cbad2b8835162d7a04",
+      "End": "c764db3914be4aa6a6844dc427b20436",
+      "Id": "ff677b2ed07044cd88bccfa11e396353"
+    },
+    {
+      "Start": "f66019e3ce5043cbad2b8835162d7a04",
+      "End": "d521831b04a246c4ab710029684e1c62",
+      "Id": "e17cee632e674acc87f1f2ebf27c806c"
+    },
+    {
+      "Start": "c961891dcf164f7784f8ce2edbb844c8",
+      "End": "c307f7c699d04b058721a7faaab5a718",
+      "Id": "f07adf3e58684822b9d9e1e5246de24a"
+    },
+    {
+      "Start": "184de75526e34fb791deecd463cb3b66",
+      "End": "5a1983555f0544aeb2c7e6b49606585c",
+      "Id": "55eef92697024c549d851b657e0e6add"
+    },
+    {
+      "Start": "118452a167c34ef3b7c20283d1882e37",
+      "End": "3e2140c72ea54cccaf36a499eb40cae6",
+      "Id": "b3f9adb55f3240838e61bf106c95bc68"
+    },
+    {
+      "Start": "6599bfbb747c442bae5a805c3f5d1efc",
+      "End": "6ee51c3523774fc4ada49c43c10aa5e9",
+      "Id": "bf260268ab1049e49a56b8f5fce58b0c"
+    }
+  ],
+  "Dependencies": [
+    "f153d48d-85dd-4a7e-8ba2-91b08d81e5e7",
+    "2f56d88b-a263-45de-b9e5-e074dbe52635",
+    "237e943c-c1a0-4936-9269-1b5ad1dc8b4c"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "spring nodes",
+      "Version": "204.1.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "4da3185954df4836aabc044abceb139b"
+      ]
+    },
+    {
+      "Name": "Clockwork for Dynamo 1.x",
+      "Version": "1.34.0",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "09aa57aa2b93486f83d3863e264e3848",
+        "533fedf39c144a3d8f459447dfaae553"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "ꟿ Collect.CurrentSelection",
+        "Id": "4da3185954df4836aabc044abceb139b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 143.64959716444588,
+        "Y": 639.53695271851836
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "0a12e64abbcf4567831ae71de99aa1e7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 963.24262528783356,
+        "Y": 563.05802782768251
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetName",
+        "Id": "09aa57aa2b93486f83d3863e264e3848",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1321.7365217714291,
+        "Y": 442.40457001774945
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.Count",
+        "Id": "764383a8a0264d5a88331a36dee425d9",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 484.52679792780089,
+        "Y": 512.334990246351
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "f037764b7a174d3e8fcdb7beaa250c19",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 691.08697756034712,
+        "Y": 516.42481952513424
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "View.Duplicate",
+        "Id": "533fedf39c144a3d8f459447dfaae553",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1045.3341073517208,
+        "Y": 399.44518816754362
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "30a3058099ae439082fa50cfd754c321",
+        "Title": "VIEW NAME:\r\n-------------",
+        "Nodes": [
+          "0a12e64abbcf4567831ae71de99aa1e7"
+        ],
+        "Left": 953.24262528783356,
+        "Top": 495.45802782768249,
+        "Width": 271.2,
+        "Height": 160.20000000000002,
+        "FontSize": 24.0,
+        "InitialTop": 563.05802782768251,
+        "InitialHeight": 122.6,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "785dc5c0d46e45d7bbcc899c1ba31ac2",
+        "Title": "TO REVIT:\r\n-----------",
+        "Nodes": [
+          "09aa57aa2b93486f83d3863e264e3848"
+        ],
+        "Left": 1311.7365217714291,
+        "Top": 374.80457001774943,
+        "Width": 237.6,
+        "Height": 185.8,
+        "FontSize": 24.0,
+        "InitialTop": 442.40457001774945,
+        "InitialHeight": 148.2,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "6e490a45df6d4367ab7ff06ca847687d",
+        "Title": "Custom Node: spring nodesv.204.1.0",
+        "Nodes": [],
+        "Left": 150.559429472423,
+        "Top": 551.9109134119384,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "ce1f01ec1d9e4f90b2ec6c5717130383",
+        "Title": "Custom Node: Clockwork",
+        "Nodes": [],
+        "Left": 1441.4447969633823,
+        "Top": 403.66368641800079,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "31a1644242ec4ab6ae81fc878cf69d69",
+        "Title": "Custom Node: Clockwork",
+        "Nodes": [],
+        "Left": 1060.4285824673516,
+        "Top": 355.52572559921623,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "90084f2e58974abaaa853ec7cf54b735",
+        "Title": "Select views to duplicate:",
+        "Nodes": [],
+        "Left": 153.34445004889233,
+        "Top": 599.16795872074727,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": 47.309511279927392,
+    "Y": 246.26882376270635,
+    "Zoom": 0.74069386163388806
+  }
+}

@@ -1,0 +1,353 @@
+{
+  "Uuid": "59bc6513-d614-4205-836d-f45e407c4844",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "APM_LevelsByHeight+Name",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [
+    {
+      "Id": "59797aaf38f84eef93e27b16b712bc86",
+      "Name": "Levels height",
+      "Type": "number",
+      "Value": "4.25",
+      "MaximumValue": 20.0,
+      "MinimumValue": 3.0,
+      "StepValue": 0.1,
+      "NumberType": "Double",
+      "Description": "Control deslizante que genera valores numéricos"
+    },
+    {
+      "Id": "603a571b980c469997d725f19208d9ae",
+      "Name": "Number of levels",
+      "Type": "number",
+      "Value": "20",
+      "MaximumValue": 100.0,
+      "MinimumValue": 1.0,
+      "StepValue": 1.0,
+      "NumberType": "Integer",
+      "Description": "Control deslizante que genera valores enteros"
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "71f0c5bfcc5f43a58012686c4dc57f83",
+      "Name": "Level.ByElevationAndName",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Crea un nivel de Revit según su elevación y nombre en el proyecto.\n\nLevel.ByElevationAndName (elevation: double, name: string): Level"
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 20.0,
+      "MinimumValue": 3.0,
+      "StepValue": 0.1,
+      "InputValue": 4.25,
+      "Id": "59797aaf38f84eef93e27b16b712bc86",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "eca5e52a524a4d05b676b7634e5478d7",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Control deslizante que genera valores numéricos"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.IntegerSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Integer",
+      "InputValue": 20,
+      "MaximumValue": 100,
+      "MinimumValue": 1,
+      "StepValue": 1,
+      "Id": "603a571b980c469997d725f19208d9ae",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f6ab85b1b8f94efb8fd1175f9ff634d0",
+          "Name": "",
+          "Description": "Int32",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Control deslizante que genera valores enteros"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..#numlevels..1;",
+      "Id": "d4dfa94f894646e8bfa2117b4b216e30",
+      "Inputs": [
+        {
+          "Id": "bc14bf7f45694ee486957610bb53115f",
+          "Name": "numlevels",
+          "Description": "numlevels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "b01e302b60c4481ebd648fd8cd418c39",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "0..#numlevels..height;",
+      "Id": "d1a8e08c6dfd4bd293f7e721f9aeb18a",
+      "Inputs": [
+        {
+          "Id": "f9d31b1f5e7440f1af56a0245c67b08a",
+          "Name": "numlevels",
+          "Description": "numlevels",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ad4a00b550dd452193867e088c26d09f",
+          "Name": "height",
+          "Description": "height",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "4dea5a2507894cbdb4c243d16493d8be",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Level.ByElevationAndName@double,string",
+      "Id": "71f0c5bfcc5f43a58012686c4dc57f83",
+      "Inputs": [
+        {
+          "Id": "3d7fffd7898a4db382710e23a002fdf6",
+          "Name": "elevation",
+          "Description": "double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "f46c5845583646009e29b9f493601d24",
+          "Name": "name",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "198e6518f7464f6cbf3fa8c1d99b6639",
+          "Name": "Level",
+          "Description": "Level",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Crea un nivel de Revit según su elevación y nombre en el proyecto.\n\nLevel.ByElevationAndName (elevation: double, name: string): Level"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Level_\" + numlevel;",
+      "Id": "b9d55cca637b4f92a5f83ead6178adc7",
+      "Inputs": [
+        {
+          "Id": "67a41621713c4ae6819009288d3311d1",
+          "Name": "numlevel",
+          "Description": "numlevel",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "af0689262aad4c21948be9375889f152",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "eca5e52a524a4d05b676b7634e5478d7",
+      "End": "ad4a00b550dd452193867e088c26d09f",
+      "Id": "632834ef9af14f9cb34e9f9062aa5639"
+    },
+    {
+      "Start": "f6ab85b1b8f94efb8fd1175f9ff634d0",
+      "End": "bc14bf7f45694ee486957610bb53115f",
+      "Id": "2e15fadd42854107a28a3b9b832eca13"
+    },
+    {
+      "Start": "f6ab85b1b8f94efb8fd1175f9ff634d0",
+      "End": "f9d31b1f5e7440f1af56a0245c67b08a",
+      "Id": "f0dea71255914daa95b3b2cfc9c16beb"
+    },
+    {
+      "Start": "b01e302b60c4481ebd648fd8cd418c39",
+      "End": "67a41621713c4ae6819009288d3311d1",
+      "Id": "604b25ebe3f24bb6961dd104ed5e4f5f"
+    },
+    {
+      "Start": "4dea5a2507894cbdb4c243d16493d8be",
+      "End": "3d7fffd7898a4db382710e23a002fdf6",
+      "Id": "b0da04fd398e43b3ba8bda31cb9175bd"
+    },
+    {
+      "Start": "af0689262aad4c21948be9375889f152",
+      "End": "f46c5845583646009e29b9f493601d24",
+      "Id": "8ad4800d2fcb4256ab99ff7c282aaf08"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Levels height",
+        "Id": "59797aaf38f84eef93e27b16b712bc86",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 803.48502266843241,
+        "Y": 355.25626142817816
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Number of levels",
+        "Id": "603a571b980c469997d725f19208d9ae",
+        "IsSetAsInput": true,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 806.37606617445385,
+        "Y": 462.939783989561
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Levels",
+        "Id": "d4dfa94f894646e8bfa2117b4b216e30",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1216.1054344732649,
+        "Y": 477.30050778410725
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Heights",
+        "Id": "d1a8e08c6dfd4bd293f7e721f9aeb18a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1216.6358796742652,
+        "Y": 324.37036458491559
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Level.ByElevationAndName",
+        "Id": "71f0c5bfcc5f43a58012686c4dc57f83",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 1914.2272031729426,
+        "Y": 386.21607175705844
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Levels´ names",
+        "Id": "b9d55cca637b4f92a5f83ead6178adc7",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1523.5410080262686,
+        "Y": 474.05500174626741
+      }
+    ],
+    "Annotations": [],
+    "X": -518.03574757719412,
+    "Y": 386.85520003966951,
+    "Zoom": 0.67933048377426952
+  }
+}

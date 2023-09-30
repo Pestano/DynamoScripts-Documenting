@@ -1,0 +1,704 @@
+{
+  "Uuid": "0b1ac0eb-8b9e-4228-883e-8215aa010890",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "APM_DeleteFillPattern",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementTypes, DSRevitNodesUI",
+      "SelectedIndex": 131,
+      "SelectedString": "FillPatternElement",
+      "NodeType": "ExtensionNode",
+      "Id": "4e77e9c106d842e6add055605f54bc57",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3b94c3c2611e4c738acd78e1e68a385b",
+          "Name": "Types",
+          "Description": "The selected Types",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los subtipos de elemento"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfType, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "115f1fd89d4747c792d742eaf9a1f62b",
+      "Inputs": [
+        {
+          "Id": "4ec7240931f44931b0dcffa911b9728c",
+          "Name": "element type",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "906e05b0b4c2406b82eff1261d2fb69c",
+          "Name": "elements",
+          "Description": "All elements in the active document of a given type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los elementos del documento activo de un tipo determinado"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "archilab.Revit.Elements.FillPatterns.IsSolidFill@Revit.Elements.Element",
+      "Id": "81bb801a40ef4b798307dc05860a8a45",
+      "Inputs": [
+        {
+          "Id": "af61b935a2064f8fa03f4b85c30aa04c",
+          "Name": "fillPattern",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "70f02f5ea44042e4a5639a7d8ae19453",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "FillPatterns.IsSolidFill (fillPattern: Element): bool"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.FilterByBoolMask@var[]..[],var[]..[]",
+      "Id": "5f2562065b2942a49089b12e8c11ef3a",
+      "Inputs": [
+        {
+          "Id": "a817a48669234e1fbb75d6fadc8f2785",
+          "Name": "list",
+          "Description": "Lista que se debe filtrar.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "a6098488ecfb49bbae40ef09beace467",
+          "Name": "mask",
+          "Description": "Lista de booleanos que representan una máscara.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "bba4f6df817a4cb3ae8469b842f7e78b",
+          "Name": "in",
+          "Description": "Elementos cuyo índice de máscara es True.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "0e86c5ae4495480d83ca75c524cee3cf",
+          "Name": "out",
+          "Description": "Elementos cuyo índice de máscara es False.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Filtra una secuencia mediante la búsqueda de los índices correspondientes en una lista separada de booleanos.\n\nList.FilterByBoolMask (list: var[]..[], mask: var[]..[]): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Id": "bc78e74c3ed74b3881c51860ed566730",
+      "Inputs": [
+        {
+          "Id": "cec6ed7e393c486ab6ace5f8b68aac17",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "cf4ac714e86e4a778dba7f56ff8cb677",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtiene el nombre del elemento.\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "archilabUI.ListSelector.ListSelector, archilabUI2022",
+      "ItemsCollection": [],
+      "NodeType": "ExtensionNode",
+      "Id": "a7ba938220944c969ec8d129069b61db",
+      "Inputs": [
+        {
+          "Id": "4aa40e6347394f0e939348f37aca7ed2",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "508688a12e4c427783f31da670b0fca9",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "571ece552c6a431284786d5be66196ff",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "734c895fce464d55af6d76f9a72f31aa",
+          "Name": "List",
+          "Description": "Selected items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d064dc7c12024809b5abce4ffa0be10a",
+          "Name": "List",
+          "Description": "Selected items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "df4543a070c4494186c6dd2718ed7410",
+          "Name": "List",
+          "Description": "Selected Items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Use this node to select multiple items from a list."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.IndexOf@var[]..[],var",
+      "Id": "d26d5126b80348ae9bc6b6c0e7ee19e3",
+      "Inputs": [
+        {
+          "Id": "8b23d031dc8e4ab4a9d11e60dfd83b95",
+          "Name": "list",
+          "Description": "Lista en la que buscar el elemento.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": true,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "08b0019ce03648d4874efc16e8833e4d",
+          "Name": "element",
+          "Description": "Elemento cuyo índice se debe devolver.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "056dbe2c13fa4416a523e89960fcd820",
+          "Name": "int",
+          "Description": "Índice del elemento de la lista.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Shortest",
+      "Description": "Devuelve el índice del elemento de la lista especificada.\n\nList.IndexOf (list: var[]..[], element: var): int"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.List.GetItemAtIndex@var[]..[],int",
+      "Id": "669c3dda2b69405aaf52c3a5c329553a",
+      "Inputs": [
+        {
+          "Id": "78cc538c50214e1f86fea0b80d827c7a",
+          "Name": "list",
+          "Description": "Lista de la cual se debe recuperar un elemento.\n\nvar[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "dbf14d9f848b4503a33fbbbdce2ffc23",
+          "Name": "index",
+          "Description": "El índice del elemento que se debe recuperar.\n\nint",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "8ca4192713684e4ebddaee9017d17ae3",
+          "Name": "item",
+          "Description": "Elemento de la lista en el índice especificado.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Devuelve un elemento de la lista especificada que se encuentra en el índice indicado.\n\nList.GetItemAtIndex (list: var[]..[], index: int): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "archilab.Revit.Elements.Elements.Delete@Revit.Elements.Element",
+      "Id": "e9d3fce0f2d8480cb83af5f74b890653",
+      "Inputs": [
+        {
+          "Id": "5bbbbfde8e09460bab14e856450a232d",
+          "Name": "element",
+          "Description": "Element to delete.\n\nElement",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dc83e8a76cbb4effa078e85c508a851c",
+          "Name": "bool",
+          "Description": "bool",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Delete element from Revit DB.\n\nElements.Delete (element: Element): bool"
+    },
+    {
+      "ConcreteType": "archilabUI.DropdownListSelector.DropdownListSelector, archilabUI2022",
+      "ItemsCollection": [
+        {
+          "Name": "Diagonal arriba",
+          "Index": 0,
+          "IsSelected": true
+        },
+        {
+          "Name": "Diagonal abajo",
+          "Index": 1,
+          "IsSelected": true
+        },
+        {
+          "Name": "Horizontal",
+          "Index": 2,
+          "IsSelected": false
+        },
+        {
+          "Name": "Vertical",
+          "Index": 3,
+          "IsSelected": true
+        },
+        {
+          "Name": "Sombreado de líneas cruzadas",
+          "Index": 4,
+          "IsSelected": true
+        },
+        {
+          "Name": "Sombreado de líneas cruzadas diagonal",
+          "Index": 5,
+          "IsSelected": true
+        }
+      ],
+      "NodeType": "ExtensionNode",
+      "Id": "b75e6046e13c491cafc67eeffc36c195",
+      "Inputs": [
+        {
+          "Id": "89c769b479704f5ca0aa04e77187fc09",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ba7742588cf8448c8c4b55425a8eb95c",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "34c635f2e1224c0e9879ebfc93d8bea3",
+          "Name": "List",
+          "Description": "Input List.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5eeb02a95c0e474aa447ccde8f1058ce",
+          "Name": "List",
+          "Description": "Selected items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "8eac1007a6ff4e9986f041e20a2fc210",
+          "Name": "List",
+          "Description": "Selected items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e5d378cbb75c47499659e3dccae6dd36",
+          "Name": "List",
+          "Description": "Selected Items.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Use this node to select multiple items from a list."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "3b94c3c2611e4c738acd78e1e68a385b",
+      "End": "4ec7240931f44931b0dcffa911b9728c",
+      "Id": "e1b08f2e4f714afe8585b9c0025e0ddf"
+    },
+    {
+      "Start": "906e05b0b4c2406b82eff1261d2fb69c",
+      "End": "a817a48669234e1fbb75d6fadc8f2785",
+      "Id": "f830e0bdad8144158e73d8e987bb7eda"
+    },
+    {
+      "Start": "906e05b0b4c2406b82eff1261d2fb69c",
+      "End": "af61b935a2064f8fa03f4b85c30aa04c",
+      "Id": "e078d2db624b4d1d871ec70f51f34d1a"
+    },
+    {
+      "Start": "70f02f5ea44042e4a5639a7d8ae19453",
+      "End": "a6098488ecfb49bbae40ef09beace467",
+      "Id": "c0fcd2bbdd1a41a192715921d73398e6"
+    },
+    {
+      "Start": "0e86c5ae4495480d83ca75c524cee3cf",
+      "End": "cec6ed7e393c486ab6ace5f8b68aac17",
+      "Id": "d96611818234446eae1ba4a693d0f0ef"
+    },
+    {
+      "Start": "0e86c5ae4495480d83ca75c524cee3cf",
+      "End": "78cc538c50214e1f86fea0b80d827c7a",
+      "Id": "993f4d9a4f5f44aaa9f2791be138ba89"
+    },
+    {
+      "Start": "cf4ac714e86e4a778dba7f56ff8cb677",
+      "End": "571ece552c6a431284786d5be66196ff",
+      "Id": "30b6475f613744ba9373542cb307d98b"
+    },
+    {
+      "Start": "cf4ac714e86e4a778dba7f56ff8cb677",
+      "End": "34c635f2e1224c0e9879ebfc93d8bea3",
+      "Id": "b969ad54ac9a485f8f1e2286d5bc5455"
+    },
+    {
+      "Start": "cf4ac714e86e4a778dba7f56ff8cb677",
+      "End": "8b23d031dc8e4ab4a9d11e60dfd83b95",
+      "Id": "b9c7a83aa4594471ab0b173b9916c9b6"
+    },
+    {
+      "Start": "056dbe2c13fa4416a523e89960fcd820",
+      "End": "dbf14d9f848b4503a33fbbbdce2ffc23",
+      "Id": "2ca0db84e7dd46788c244e3dffe94d50"
+    },
+    {
+      "Start": "8ca4192713684e4ebddaee9017d17ae3",
+      "End": "5bbbbfde8e09460bab14e856450a232d",
+      "Id": "adf5521ee09f4f5a81dfd4f27c71753c"
+    },
+    {
+      "Start": "e5d378cbb75c47499659e3dccae6dd36",
+      "End": "08b0019ce03648d4874efc16e8833e4d",
+      "Id": "492f3cc78c884531ae252f65ff0950ad"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "archi-lab.net",
+      "Version": "2023.213.1722",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "81bb801a40ef4b798307dc05860a8a45",
+        "a7ba938220944c969ec8d129069b61db",
+        "e9d3fce0f2d8480cb83af5f74b890653",
+        "b75e6046e13c491cafc67eeffc36c195"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Element Types",
+        "Id": "4e77e9c106d842e6add055605f54bc57",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 239.40848599443586,
+        "Y": 523.97489455762422
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Type",
+        "Id": "115f1fd89d4747c792d742eaf9a1f62b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 457.12612121915811,
+        "Y": 527.72864688908487
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "FillPatterns.IsSolidFill",
+        "Id": "81bb801a40ef4b798307dc05860a8a45",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 703.39014073046155,
+        "Y": 525.98456193689708
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.FilterByBoolMask",
+        "Id": "5f2562065b2942a49089b12e8c11ef3a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 988.71354527591711,
+        "Y": 417.65934851254724
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Name",
+        "Id": "bc78e74c3ed74b3881c51860ed566730",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1200.8550191520442,
+        "Y": 425.34441262555771
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List Selector",
+        "Id": "a7ba938220944c969ec8d129069b61db",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1557.2823641443263,
+        "Y": 605.79186191144163
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.IndexOf",
+        "Id": "d26d5126b80348ae9bc6b6c0e7ee19e3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1887.8663220722842,
+        "Y": 444.42537012194
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "List.GetItemAtIndex",
+        "Id": "669c3dda2b69405aaf52c3a5c329553a",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2106.9575923434663,
+        "Y": 439.25658730153975
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Elements.Delete",
+        "Id": "e9d3fce0f2d8480cb83af5f74b890653",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2316.1213797789947,
+        "Y": 440.37029739645533
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Dropdown List Selector",
+        "Id": "b75e6046e13c491cafc67eeffc36c195",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1550.4482892694393,
+        "Y": 462.90818067939477
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "0dc61e9f57d749d7a449df23c4ec45e5",
+        "Title": "Custom Node: archilab v.2023.213.1722",
+        "Nodes": [],
+        "Left": 703.39014073046155,
+        "Top": 490.98456193689708,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "0f82ac2284ce4d72b2b715548b639d87",
+        "Title": "Custom Node: archilab v.2023.213.1722",
+        "Nodes": [],
+        "Left": 1564.8117746574153,
+        "Top": 419.55316133531574,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "d9bc88944dfd4e34a2d6cd2ea6f40049",
+        "Title": "Custom Node: archilab v.2023.213.1722",
+        "Nodes": [],
+        "Left": 2314.195507201538,
+        "Top": 403.44442481899915,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "cd37f39d66b94c1fb4c2e9eb9a1b1e40",
+        "Title": "INSTRUCTIONS:\r\n_________________\r\nWith this script we can delete all the filling patterns that we indicate in the list that it will generate, all at once.",
+        "Nodes": [],
+        "Left": 239.910680208298,
+        "Top": 418.2898983607401,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -22.879215569597136,
+    "Y": 217.969983061576,
+    "Zoom": 0.63042125903283763
+  }
+}

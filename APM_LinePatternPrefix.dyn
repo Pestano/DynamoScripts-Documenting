@@ -1,0 +1,536 @@
+{
+  "Uuid": "67460ba8-4f1e-4130-99c8-e21056879d41",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "APM_LinePatternPrefix",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "pre + name;",
+      "Id": "79134066905d40df8771d1af0a697bd5",
+      "Inputs": [
+        {
+          "Id": "a055064c1ca64663bf140db9ecc42384",
+          "Name": "pre",
+          "Description": "pre",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bb0124181d134d5987fe71249cf766a9",
+          "Name": "name",
+          "Description": "name",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "1c30bde271ba4c71afa9cd9cdeea2f50",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"VP_\";",
+      "Id": "d08bcadd695e4e0e998694f2d5cfd7f2",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "0972010139cf427db966a96cd2d3c522",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CustomNodes.Function, DynamoCore",
+      "FunctionSignature": "2f56d88b-a263-45de-b9e5-e074dbe52635",
+      "FunctionType": "Graph",
+      "NodeType": "FunctionNode",
+      "Id": "1367e115483f45da8d0562384488fd30",
+      "Inputs": [
+        {
+          "Id": "44cac561b0264b25a3ebe3289cfecc66",
+          "Name": "element",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c36c23d3eb7a4e34a98517a647c5801b",
+          "Name": "name",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "a1db7dc16723473d8e5687bd85f7fa73",
+          "Name": "element",
+          "Description": "valor de retorno",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b6c67889b19e4417bc8a2bc01ad3f10f",
+          "Name": "success",
+          "Description": "valor de retorno",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Gets the name of a given Revit element"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfType, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "abe525a46eea4e20b3abcd896fc31565",
+      "Inputs": [
+        {
+          "Id": "e15d2962c7c34d0b83f12727c9d8483c",
+          "Name": "element type",
+          "Description": "An element type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "feb820cdc5e440bc9c696b06fffd0cdc",
+          "Name": "elements",
+          "Description": "All elements in the active document of a given type.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los elementos del documento activo de un tipo determinado"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementTypes, DSRevitNodesUI",
+      "SelectedIndex": 182,
+      "SelectedString": "LinePatternElement",
+      "NodeType": "ExtensionNode",
+      "Id": "c87dc599835b46e8bdc26f628df16f89",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "3db5556279de472f81dfa2a8c3a4a2a1",
+          "Name": "Types",
+          "Description": "The selected Types",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todos los subtipos de elemento"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.Name",
+      "Id": "7adcf67098bd477ba1ffd610b9420b1f",
+      "Inputs": [
+        {
+          "Id": "b7c67f1bf793430ead415c7868d33939",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "dfdc1fee39ab4d01b5b43d672c0fa0bb",
+          "Name": "string",
+          "Description": "string",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtiene el nombre del elemento.\n\nElement.Name: string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.String.Replace@string,string,string",
+      "Id": "4b4e9c4413ce4b22a4fa31fc9619d935",
+      "Inputs": [
+        {
+          "Id": "4473625e5283402dbf272bfbc1e644ae",
+          "Name": "str",
+          "Description": "Cadena en la que se deben sustituir las subcadenas.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "bddf36dddbf84cdfb3e4aba55d69eaa5",
+          "Name": "searchFor",
+          "Description": "Texto que se debe sustituir.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "478e87fe2cd747d5a4a8820a3a78838e",
+          "Name": "replaceWith",
+          "Description": "Texto que se debe utilizar para la sustitución.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "c7b62ade01104d3c8396ab2520c0ccb2",
+          "Name": "str",
+          "Description": "Cadena con las sustituciones realizadas.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Sustituye todas las coincidencias del texto de una cadena por otro texto.\n\nString.Replace (str: string, searchFor: string, replaceWith: string): string"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"MIO\";",
+      "Id": "c213f2aa80564166ba1fd00c3a1742cf",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "aa17e76c3b9841d189aba0fa6d266d16",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "0972010139cf427db966a96cd2d3c522",
+      "End": "a055064c1ca64663bf140db9ecc42384",
+      "Id": "15b521f7e81649649915b97cbc1580c6"
+    },
+    {
+      "Start": "0972010139cf427db966a96cd2d3c522",
+      "End": "bddf36dddbf84cdfb3e4aba55d69eaa5",
+      "Id": "677793704c984c58adaff7381899912a"
+    },
+    {
+      "Start": "feb820cdc5e440bc9c696b06fffd0cdc",
+      "End": "b7c67f1bf793430ead415c7868d33939",
+      "Id": "82b8eb30783140948e4d39fb2439fc4a"
+    },
+    {
+      "Start": "feb820cdc5e440bc9c696b06fffd0cdc",
+      "End": "44cac561b0264b25a3ebe3289cfecc66",
+      "Id": "9a2d3625df86496f8722c75831609286"
+    },
+    {
+      "Start": "3db5556279de472f81dfa2a8c3a4a2a1",
+      "End": "e15d2962c7c34d0b83f12727c9d8483c",
+      "Id": "0c845a57b8184c309ece24bd03fa4efd"
+    },
+    {
+      "Start": "dfdc1fee39ab4d01b5b43d672c0fa0bb",
+      "End": "bb0124181d134d5987fe71249cf766a9",
+      "Id": "31025822c3a64677aded6f934abf294e"
+    },
+    {
+      "Start": "dfdc1fee39ab4d01b5b43d672c0fa0bb",
+      "End": "4473625e5283402dbf272bfbc1e644ae",
+      "Id": "f76e49bd811d4b1399e50539d8cd813c"
+    },
+    {
+      "Start": "c7b62ade01104d3c8396ab2520c0ccb2",
+      "End": "c36c23d3eb7a4e34a98517a647c5801b",
+      "Id": "91161ad767714f58a5dba94fb3942432"
+    },
+    {
+      "Start": "aa17e76c3b9841d189aba0fa6d266d16",
+      "End": "478e87fe2cd747d5a4a8820a3a78838e",
+      "Id": "bfb6bccc4bc84a0281c87a88e7199e91"
+    }
+  ],
+  "Dependencies": [
+    "2f56d88b-a263-45de-b9e5-e074dbe52635"
+  ],
+  "NodeLibraryDependencies": [
+    {
+      "Name": "Clockwork for Dynamo 1.x",
+      "Version": "1.31.1",
+      "ReferenceType": "Package",
+      "Nodes": [
+        "1367e115483f45da8d0562384488fd30"
+      ]
+    }
+  ],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "79134066905d40df8771d1af0a697bd5",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1852.0273370548828,
+        "Y": 118.62124893480723
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "d08bcadd695e4e0e998694f2d5cfd7f2",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1682.5480476722432,
+        "Y": 110.98964057005503
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetName",
+        "Id": "1367e115483f45da8d0562384488fd30",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 2103.2465576872714,
+        "Y": 210.6473096866016
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Type",
+        "Id": "abe525a46eea4e20b3abcd896fc31565",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1272.0892011889184,
+        "Y": 224.64690013255097
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element Types",
+        "Id": "c87dc599835b46e8bdc26f628df16f89",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1038.0953767514038,
+        "Y": 223.96918866328429
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.Name",
+        "Id": "7adcf67098bd477ba1ffd610b9420b1f",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1502.1979298548276,
+        "Y": 222.12378935894537
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "String.Replace",
+        "Id": "4b4e9c4413ce4b22a4fa31fc9619d935",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1828.8718409923956,
+        "Y": -147.66147698325273
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "c213f2aa80564166ba1fd00c3a1742cf",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1678.5439672853738,
+        "Y": -84.369274979651721
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "a3dc6c438b9246cf99262042b129de97",
+        "Title": "TO REVIT:\r\n-----------",
+        "Nodes": [
+          "1367e115483f45da8d0562384488fd30",
+          "203ab9ab5dc8479988c29dfcb5e56a30"
+        ],
+        "Left": 2093.2465576872714,
+        "Top": 94.50501227871419,
+        "Width": 237.6,
+        "Height": 234.34229740788743,
+        "FontSize": 24.0,
+        "InitialTop": 162.10501227871418,
+        "InitialHeight": 182.10722783396318,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "3395c75aa82a474ba82d25b8ec0b0a33",
+        "Title": "PREFIX/SUFIX:\r\n--------------",
+        "Nodes": [
+          "79134066905d40df8771d1af0a697bd5",
+          "d08bcadd695e4e0e998694f2d5cfd7f2"
+        ],
+        "Left": 1672.5480476722432,
+        "Top": 43.389640570055029,
+        "Width": 357.47928938263954,
+        "Height": 177.43160836475221,
+        "FontSize": 24.0,
+        "InitialTop": 110.98964057005503,
+        "InitialHeight": 147.80908613814995,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "fdd960c958c14007a5c7fe87d2a55470",
+        "Title": "SELECT ALL THE LINE PATTERNS IN THE PROJECT:\r\n------------",
+        "Nodes": [
+          "abe525a46eea4e20b3abcd896fc31565",
+          "c87dc599835b46e8bdc26f628df16f89",
+          "7adcf67098bd477ba1ffd610b9420b1f"
+        ],
+        "Left": 1028.0953767514038,
+        "Top": 154.52378935894538,
+        "Width": 686.50255310342379,
+        "Height": 162.72311077360558,
+        "FontSize": 24.0,
+        "InitialTop": 222.12378935894537,
+        "InitialHeight": 147.52311077360559,
+        "TextblockHeight": 57.6,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "f1dd22a2dfc74acf904bfb496a7f8e57",
+        "Title": "VARIATION TO CHANGE THE PREFIX/SUFIX:\r\n----------",
+        "Nodes": [
+          "4b4e9c4413ce4b22a4fa31fc9619d935",
+          "c213f2aa80564166ba1fd00c3a1742cf"
+        ],
+        "Left": 1668.5439672853738,
+        "Top": -244.06147698325273,
+        "Width": 377.5278737070218,
+        "Height": 252.292202003601,
+        "FontSize": 24.0,
+        "InitialTop": -147.66147698325273,
+        "InitialHeight": 185.892202003601,
+        "TextblockHeight": 86.4,
+        "Background": "#FFD8D8D8"
+      },
+      {
+        "Id": "b19c28f25c854c98ba4a49cf2a978c94",
+        "Title": "INSTRUCTIONS:\r\n___________________\r\nThis script is designed to add a prefix/sufix to Revit Line patterns.",
+        "Nodes": [],
+        "Left": 1035.9796450784193,
+        "Top": 48.929618199056762,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      },
+      {
+        "Id": "203ab9ab5dc8479988c29dfcb5e56a30",
+        "Title": "Custom Node: Clockwork",
+        "Nodes": [],
+        "Left": 2111.400201506814,
+        "Top": 162.10501227871418,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -606.83742043222207,
+    "Y": 602.943405932187,
+    "Zoom": 0.59577296696779958
+  }
+}

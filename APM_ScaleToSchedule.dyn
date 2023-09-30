@@ -1,0 +1,328 @@
+{
+  "Uuid": "cc925c52-72b1-4da1-8ed8-4d1f24c79268",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "APM_ScaleToSchedule",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "DSRevitNodesUI.Categories, DSRevitNodesUI",
+      "SelectedIndex": 487,
+      "SelectedString": "OST_Sheets",
+      "NodeType": "ExtensionNode",
+      "Id": "cb194cc10a784f5cb0c35620b8143930",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "1e5ca24cabd3495c94548755ea01e05b",
+          "Name": "Category",
+          "Description": "La categoría seleccionada",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Todas las categorías integradas"
+    },
+    {
+      "ConcreteType": "DSRevitNodesUI.ElementsOfCategory, DSRevitNodesUI",
+      "NodeType": "ExtensionNode",
+      "Id": "e188ae7aef5c4b2c97ffa25ffebd1b35",
+      "Inputs": [
+        {
+          "Id": "3d9c1c1e46df48ed95eae4e8e79b710d",
+          "Name": "Category",
+          "Description": "La categoría",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "376a89e152d245c0a511d08d84e540b3",
+          "Name": "Elements",
+          "Description": "Un tipo de elemento",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Obtiene todos los elementos de la categoría especificada en el modelo"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.GetParameterValueByName@string",
+      "Id": "eef9da0009c94e8faf7a4867239f573b",
+      "Inputs": [
+        {
+          "Id": "98c37a62849c4c4580582064946bff68",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "b604be30e6f841ebb2f75ae7b481ca1c",
+          "Name": "parameterName",
+          "Description": "El nombre del parámetro cuyo valor desea obtener.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "193fe310b5b94c4e8ed5d8577c5f5937",
+          "Name": "var[]..[]",
+          "Description": "var[]..[]",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Obtiene el valor de uno de los parámetros del elemento.\n\nElement.GetParameterValueByName (parameterName: string): var[]..[]"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Escala\";",
+      "Id": "99fa10c7f4c04149aa9b576a187559c0",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "867685f7c7a24fc7b90f18be498d4cc5",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "Revit.Elements.Element.SetParameterByName@string,var",
+      "Id": "d42ffeea89164f129ca9b953ff786a57",
+      "Inputs": [
+        {
+          "Id": "23362f384b7841b0b768e90765ea0a19",
+          "Name": "element",
+          "Description": "Revit.Elements.Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "e1d0465cc61846e8bbc76c3fd2bf2373",
+          "Name": "parameterName",
+          "Description": "El nombre del parámetro que se debe definir.\n\nstring",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "ecb34070036e4756bc2c320be33338f5",
+          "Name": "value",
+          "Description": "El valor.\n\nvar",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "9326a905c41b42e4a8d518e52e7b9413",
+          "Name": "Element",
+          "Description": "Element",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Define uno de los parámetros del elemento.\n\nElement.SetParameterByName (parameterName: string, value: var): Element"
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.CodeBlockNodeModel, DynamoCore",
+      "NodeType": "CodeBlockNode",
+      "Code": "\"Scale-schedule\";",
+      "Id": "f87a37719de9415c846ad04e1a2342de",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "a8566f2eb07c40209c845b42b56a0e64",
+          "Name": "",
+          "Description": "Valor de la expresión en la línea 1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Permite creación directa de código de DesignScript"
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "1e5ca24cabd3495c94548755ea01e05b",
+      "End": "3d9c1c1e46df48ed95eae4e8e79b710d",
+      "Id": "1eaaf13cd1fa4980ab795b85075dd879"
+    },
+    {
+      "Start": "376a89e152d245c0a511d08d84e540b3",
+      "End": "98c37a62849c4c4580582064946bff68",
+      "Id": "f60f14ba1c5e41208ae2c37d5531a924"
+    },
+    {
+      "Start": "376a89e152d245c0a511d08d84e540b3",
+      "End": "23362f384b7841b0b768e90765ea0a19",
+      "Id": "fe9d338bf5af47a5bfcc84621ad91949"
+    },
+    {
+      "Start": "193fe310b5b94c4e8ed5d8577c5f5937",
+      "End": "ecb34070036e4756bc2c320be33338f5",
+      "Id": "316069c2e28c4475897670de35cefade"
+    },
+    {
+      "Start": "867685f7c7a24fc7b90f18be498d4cc5",
+      "End": "b604be30e6f841ebb2f75ae7b481ca1c",
+      "Id": "74acebe31b5a4ae08b5b3da3b59f8ce8"
+    },
+    {
+      "Start": "a8566f2eb07c40209c845b42b56a0e64",
+      "End": "e1d0465cc61846e8bbc76c3fd2bf2373",
+      "Id": "f87e2e0efb1a44b58958593d425d1797"
+    }
+  ],
+  "Dependencies": [],
+  "NodeLibraryDependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.5.0.7460",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Vista preliminar en segundo plano",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Sheets",
+        "Id": "cb194cc10a784f5cb0c35620b8143930",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 886.40056981673433,
+        "Y": 548.85553250985731
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "All Elements of Category",
+        "Id": "e188ae7aef5c4b2c97ffa25ffebd1b35",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1158.5784415856965,
+        "Y": 550.12957525353659
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.GetParameterValueByName",
+        "Id": "eef9da0009c94e8faf7a4867239f573b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1432.9784415856968,
+        "Y": 583.94080467088713
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Code Block",
+        "Id": "99fa10c7f4c04149aa9b576a187559c0",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1215.9103650512634,
+        "Y": 651.9726948684737
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Element.SetParameterByName",
+        "Id": "d42ffeea89164f129ca9b953ff786a57",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1795.3784415856965,
+        "Y": 515.12957525353659
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Parameter Scale created",
+        "Id": "f87a37719de9415c846ad04e1a2342de",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Excluded": false,
+        "X": 1432.9784415856964,
+        "Y": 480.3429085868699
+      }
+    ],
+    "Annotations": [
+      {
+        "Id": "b1a16edfe72e491b950fc1cf7ac6395a",
+        "Title": "INSTRUCTIONS:\r\n-------------------\r\n1- Create sheets schedule.\r\n2- Create the \"Scale-schedule\" parameter\r\n3- Execute definition.\r\n\r\nThe Scale parameter of the planes is placed in the new parameter created",
+        "Nodes": [],
+        "Left": 881.38082128289909,
+        "Top": 384.36612533922175,
+        "Width": 0.0,
+        "Height": 0.0,
+        "FontSize": 36.0,
+        "InitialTop": 0.0,
+        "InitialHeight": 0.0,
+        "TextblockHeight": 0.0,
+        "Background": "#FFC1D676"
+      }
+    ],
+    "X": -1267.0176361737992,
+    "Y": 196.93397329171648,
+    "Zoom": 0.98309670345675992
+  }
+}
